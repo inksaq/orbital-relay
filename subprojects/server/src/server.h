@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../common/network/network_entity.h"
+#include "./../../common/src/network/network_entity.h"
 
 class Server : public NetworkEntity {
 public:

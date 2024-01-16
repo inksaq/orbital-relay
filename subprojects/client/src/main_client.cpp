@@ -1,4 +1,4 @@
-#include "common/client/client.h"
+#include "client.h"
 #include <iostream>
 
 int main() {

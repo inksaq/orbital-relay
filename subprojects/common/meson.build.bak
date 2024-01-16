@@ -1,0 +1,13 @@
+#project('common', 'cpp')
+inc = include_directories('include')
+cpp_args = ['-D_WIN32_WINNT=0x0601'] 
+sources = files()
+common_lib = shared_library('common',
+  sources,
+  cpp_args : cpp_args,
+  include_directories : inc,
+  install : true)
+
+common_dep = declare_dependency(include_directories : inc, link_with : common_lib)
+#boost_dep = dependency('boost', required: true)
+

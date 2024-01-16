@@ -10,5 +10,7 @@ void Server::start() {
     // Server-specific code using ASIO
 }
 void Server::run() {
+    while (true) {
     std::cout << "Server is running @ " << endpoint << std::endl;
+    }
 }
