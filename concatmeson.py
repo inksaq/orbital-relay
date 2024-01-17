@@ -10,7 +10,7 @@ def concatenate_meson_files(directories, output_file):
                     outfile.write(infile.read())
                     outfile.write('\n\n')
 
-project_root = './subprojects/'  # Change this to your project's root directory
+project_root = '.'  # Change this to your project's root directory
 subdirectories = ['client', 'server', 'engine', 'common']  # Subdirectories to include
 subdirectories = [os.path.join(project_root, d) for d in subdirectories]  # Full paths
 output_file = 'combined_meson.build'  # The name of the output file

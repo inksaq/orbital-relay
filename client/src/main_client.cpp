@@ -27,7 +27,7 @@ static void glfw_error_callback(int error, const char* description)
 }
 
 // Main code
-int main(int, char**)
+int main(int argc, char* argv[])
 {
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())
