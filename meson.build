@@ -5,11 +5,12 @@ add_global_arguments('-Wunused-private-field', language: 'cpp')
 # ASIO Dependency
 #boost_dep = dependency('boost', required: true)
 # ASIO Dependency
-vulkan_dep = dependency('vulkan', required : true)
+#vulkan_dep = dependency('vulkan', required : true)
 
 
 subproject('common')
+subproject('engine')
 subproject('server')
 subproject('client')
-subproject('engine')
+
 # Subdirectories

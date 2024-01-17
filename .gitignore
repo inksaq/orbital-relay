@@ -1,0 +1,9 @@
+build/
+subprojects/*
+!subprojects/*.wrap
+!subprojects/engine/
+!subprojects/common/
+!subprojects/server/
+!subprojects/client/
+
+

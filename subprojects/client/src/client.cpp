@@ -13,3 +13,8 @@ void Client::run() {
     std::cout << "Client is running, Connected @ " << endpoint << std::endl;
 }
 
+bool Client::connected() {
+    
+    return true;
+}
+

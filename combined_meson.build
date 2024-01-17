@@ -1,0 +1,43 @@
+
+# File: ./subprojects/client\meson.build
+project('client', 'cpp')
+common_dep = dependency('commonLib', fallback: ['common', 'common_dep'])
+engineDep = dependency('engineLib', fallback: ['engine', 'engineDep'])
+glfw_dep = dependency('glfw3', required : true)
+sources = files('src/client.cpp', 'src/client.h', 'src/main_client.cpp')
+cpp_args = ['-D_WIN32_WINNT=0x0601']
+executable('main_client', sources, cpp_args : cpp_args, dependencies : [common_dep, engineDep])
+
+
+
+# File: ./subprojects/server\meson.build
+project('server', 'cpp')
+
+common_dep = dependency('commonLib', fallback: ['common', 'common_dep'])
+sources = files('src/main_server.cpp', 'src/server.cpp', 'src/server.h')
+cpp_args = ['-D_WIN32_WINNT=0x0601']
+executable('main_server', sources, cpp_args : cpp_args, dependencies : common_dep, install : true, install_dir : 'bin')
+
+
+
+# File: ./subprojects/engine\meson.build
+project('engine', 'cpp')
+common_dep = dependency('common', fallback: ['common', 'common_dep'])
+glfw_dep = dependency('glfw3', required : true)
+sources = files('src/engine_head.h', 'src/main.cpp')
+engineLib = shared_library('engineLib', sources, dependencies: [glfw_dep])
+engineDep = declare_dependency(link_with: engineLib, dependencies: [glfw_dep])
+
+
+
+# File: ./subprojects/common\meson.build
+project('common', 'cpp')
+
+asio_dep = dependency('asio', required: true)
+cpp_args = ['-D_WIN32_WINNT=0x0601']
+sources = files('src/network/network_entity.cpp', 'src/network/network_entity.h')
+common_lib = static_library('commonLib', sources, cpp_args : cpp_args, dependencies: [asio_dep], install : true, install_dir : get_option('libdir'))
+common_dep = declare_dependency(link_with: common_lib, dependencies: [asio_dep])
+
+
+

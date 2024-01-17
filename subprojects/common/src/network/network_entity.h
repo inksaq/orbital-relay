@@ -1,7 +1,6 @@
 #pragma once
 
-#include <boost/asio.hpp>
-//#include "../../../include/asio.hpp"
+#include <asio.hpp>
 #include <string>
 
 class NetworkEntity {
@@ -12,7 +11,7 @@ public:
     virtual void start() = 0;
 
 protected:
-    boost::asio::io_context io_context;
-    boost::asio::ip::tcp::endpoint endpoint;
+    asio::io_context io_context;
+    asio::ip::tcp::endpoint endpoint;
 };
 

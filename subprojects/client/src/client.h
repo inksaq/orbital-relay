@@ -7,5 +7,6 @@ public:
     Client(const std::string& address, unsigned short port);
     void start() override;
     void run();
+    bool connected();
 };
 
