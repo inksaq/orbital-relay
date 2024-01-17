@@ -8,5 +8,6 @@ public:
     void start() override;
     void run();
     bool connected();
+    void renderUI();
 };
 

@@ -9,7 +9,6 @@ add_global_arguments('-Wunused-private-field', language: 'cpp')
 
 
 subproject('common')
-subproject('engine')
 subproject('server')
 subproject('client')
 

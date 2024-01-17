@@ -1,5 +1,6 @@
 #include "client.h"
 #include <iostream>
+#include <imgui.h>
 
 Client::Client(const std::string& address, unsigned short port) :
     NetworkEntity(address, port) {
@@ -16,5 +17,13 @@ void Client::run() {
 bool Client::connected() {
     
     return true;
+}
+
+void Client::renderUI() {
+    ImGui::Begin("Orbital - Relay - Client");
+    ImGui::Button("Connect");
+    static float value = 0.0f;
+    ImGui::DragFloat("Value", &value);
+    ImGui::End();
 }
 

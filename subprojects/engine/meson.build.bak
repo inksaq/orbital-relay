@@ -1,4 +1,0 @@
-project('engine', 'cpp')
-common_dep = dependency('common', fallback: ['common', 'common_dep'])
-glfw_dep = dependency('glfw3', required : true)
-sources = files()
