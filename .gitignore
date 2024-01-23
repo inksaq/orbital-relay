@@ -1,6 +1,6 @@
 build/
 dist/
-.cache/
+.cache/*
 subprojects/*
 !subprojects/*.wrap
 !subprojects/server/
