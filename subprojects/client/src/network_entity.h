@@ -1,3 +1,4 @@
+
 #pragma once
 
 #include <asio.hpp>
@@ -14,4 +15,3 @@ protected:
     asio::io_context io_context;
     asio::ip::tcp::endpoint endpoint;
 };
-

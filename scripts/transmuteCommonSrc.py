@@ -42,8 +42,8 @@ def update_meson_build(project_path, extensions):
     print(f"Updated {meson_file_path}")
 
 def main():
-    base_path = './subprojects/'  # Adjust the base path as needed
-    subprojects = ['common', 'server', 'client', 'engine']
+    base_path = '../subprojects'  # Adjust the base path as needed
+    subprojects = ['server', 'client']
     extensions = ['.cpp', '.h']
 
     for project in subprojects:

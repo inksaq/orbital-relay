@@ -1,6 +1,7 @@
 #include "src/client.h"
 
 #include "imgui.h"
+#include <GLFW/glfw3native.h>
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include <stdio.h>
@@ -27,7 +28,7 @@ static void glfw_error_callback(int error, const char* description)
 }
 
 // Main code
-int main(int argc, char* argv[])
+int main(int cargs, char** vargs)
 {
     glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit())
@@ -57,7 +58,7 @@ int main(int argc, char* argv[])
 #endif
 
     // Create window with graphics context
-    GLFWwindow* window = glfwCreateWindow(1280, 720, "Dear ImGui GLFW+OpenGL3 example", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "Cucks ur uncle", nullptr, nullptr);
     if (window == nullptr)
         return 1;
     glfwMakeContextCurrent(window);
@@ -99,8 +100,6 @@ int main(int argc, char* argv[])
     //IM_ASSERT(font != nullptr);
 
     // Our state
-    bool show_demo_window = true;
-    bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 
     // Main loop
